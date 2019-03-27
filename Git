@@ -1,0 +1,15 @@
+Git简介
+在Windows上安装Git
+自报家门
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+创建版本库
+1.创建一个空目录
+$ mkdir learngit
+mkdir learngit用于创建一个空目录
+$ cd 文件夹名称
+$ pwd /Users/michael/learngit
+pwd命令用于显示当前目录
+2.通过git init命令把这个目录变成Git可以管理的仓库
+$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。​
