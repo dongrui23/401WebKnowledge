@@ -1,8 +1,8 @@
 Git简介
 在Windows上安装Git
 自报家门
-$ git config --global user.name "Your Name"
-$ git config --global user.email "email@example.com"
+$ git config --global user.name "dongrui23"
+$ git config --global user.email "1339450327@qq.com"
 创建版本库
 1.创建一个空目录
 $ mkdir learngit
