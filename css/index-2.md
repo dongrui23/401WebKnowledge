@@ -26,7 +26,7 @@ div {
                                                 fixed（背景就会被固定住，不会被滚动条滚走）
                                                 */
     background:red url(1.jpg) no-repeat 100px 100px fixed;/*	
-                                    background-color:red;
+                                        background-color:red;
 	                                background-image:url(1.jpg);
 	                                background-repeat:no-repeat;
 	                                background-position:100px 100px;
