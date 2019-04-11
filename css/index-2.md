@@ -4,7 +4,7 @@
 ```css
 div {
     background-color: #ff99ff;/*设置元素的颜色:red、rgb（255,0,0）、#ff0000。
-                                常见颜色：#000   黑
+                                常见颜色：  #000   黑
 	                                     #fff   白
 	                                     #f00   红
 	                                     #222   深灰
