@@ -10,12 +10,12 @@ div {
 	         #f00   红
 	         #222   深灰
 	         #333   灰
-             #ccc   浅灰
+                #ccc   浅灰
              */
     background-image: url(images/1.gif);/*将图像设置为背景*/
     background-repeat: no-repeat;/*设置背景图像是否重复及如何重复，默认平铺满。
-        no-repeat：不要平铺、
-        repeat-x：横向平铺、
+        no-repeat：不要平铺
+        repeat-x：横向平铺
         repeat-y：纵向平铺
         */
     background-position: center top;/*设置背景图片在当前容器中的位置，
@@ -31,7 +31,7 @@ div {
 	    background-image:url(1.jpg);
 	    background-repeat:no-repeat;
 	    background-position:100px 100px;
-        background-attachment:fixed;
+            background-attachment:fixed;
         */
 }
 ```
