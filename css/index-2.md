@@ -4,12 +4,12 @@
 ```css
 div {
     background-color: #ff99ff;/*设置元素的颜色:red、rgb（255,0,0）、#ff0000。
-                                常见颜色：  #000   黑
+                                常见颜色：    #000   黑
 	                                     #fff   白
 	                                     #f00   红
 	                                     #222   深灰
 	                                     #333   灰
-                                            #ccc   浅灰
+                                             #ccc   浅灰
                                         */
     background-image: url(images/1.gif);/*将图像设置为背景*/
     background-repeat: no-repeat;/*设置背景图像是否重复及如何重复，默认平铺满。
