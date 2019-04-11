@@ -23,7 +23,7 @@ div {
                                     */
     background-attachment: scroll;/*设置背景图片是否跟着滚动条一起移动。 
                                     属性值可以是：scroll（与fixed属性相反，默认属性）
-                                                fixed（背景就会被固定住，不会被滚动条滚走）
+                                                 fixed（背景就会被固定住，不会被滚动条滚走）
                                                 */
     background:red url(1.jpg) no-repeat 100px 100px fixed;/*	
                                         background-color:red;
