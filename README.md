@@ -17,6 +17,8 @@
 
 **[Source](https://github.com/dongrui23/WEB/blob/master/css/cssSource.md)**
 
+- [Iconfont图标库](https://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2)
+
 - [CSS像素、物理像素、逻辑像素、设备像素比、PPI、Viewport](https://github.com/jawil/blog/issues/21)
 
 - [CSS中文文档](http://css.cuishifeng.cn/)
@@ -32,6 +34,12 @@
 - [Sass文档](http://sass.bootcss.com/)
 
 ## [JavaScript](https://github.com/dongrui23/WEB/tree/master/javascript)
+
+Source
+
+- [Swiper特效插件](https://www.swiper.com.cn/)
+
+- [Velocity.js](http://www.velocityjs.org/)
 
 [Array](https://github.com/dongrui23/WEB/blob/master/javascript/Array.md)
 
