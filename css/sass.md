@@ -37,6 +37,7 @@ $width: 5em;
     background-color: #ff0000;
     color: #000000; }
 ------------------------------
+#main {
   width: 97%;
 
   p, div {
