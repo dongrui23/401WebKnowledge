@@ -67,9 +67,9 @@ Source
 
 ## [jquery](https://github.com/dongrui23/WEB/tree/master/jQuery)
 
-- [jquery.md](https://github.com/dongrui23/WEB/blob/master/jQuery/jQuery.md)
+[jquery.md](https://github.com/dongrui23/WEB/blob/master/jQuery/jQuery.md)
 
-- [jQuery+Ajax](https://www.bilibili.com/video/av22807707/?p=1)
+- [jQuery+Ajax-√](https://www.bilibili.com/video/av22807707/?p=1)
 
 ## [Tools](https://github.com/dongrui23/WEB/tree/master/tools)
 
