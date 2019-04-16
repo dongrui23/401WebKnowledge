@@ -1,5 +1,5 @@
 
-###变异
+##变异
 
 ```
 push()	数组的新长度 = 数组.push(元素);
@@ -26,7 +26,7 @@ shift()	被删除的元素 = 数组.shift();
 ---删除数组中的第一个元素
 ```
 
-###遍历
+##遍历
 
 ```
 数组/boolean/无 = 数组.every/filter/forEach/map/some(function(element,index,arr){程序和返回值；}
