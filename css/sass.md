@@ -1,5 +1,5 @@
 
-## 变量
+**变量**
 
 Variables: $
 
@@ -15,7 +15,7 @@ $width: 5em;
 }
 ```
 
-## 嵌套规则
+**嵌套规则**
 
 ```css
 #main p {
@@ -58,3 +58,82 @@ $width: 5em;
   #main pre {
     font-size: 3em; }
 ```
+
+**mixins**
+
+Defining a Mixin: @mixin
+
+```css
+/* large-text的mixin定义 */
+
+@mixin large-text {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}
+----------------------
+/* @include指令 */
+
+.page-title {
+  @include large-text; /* 包含large-text的mixin定义 */
+  padding: 4px;
+  margin-top: 10px;
+}
+
+/* 被编译为： */
+
+.page-title {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+  padding: 4px;
+  margin-top: 10px; }
+------------------------------------
+/* Mixins可以将参数SassScript值作为参数 */
+
+@mixin sexy-border($color, $width) {
+  border: {
+    color: $color;
+    width: $width;
+    style: dashed;
+  }
+}
+
+p { @include sexy-border(blue, 1in); }
+
+/* 被编译为： */
+
+p {
+  border-color: blue;
+  border-width: 1in;
+  border-style: dashed; }
+```
+
+**导入**
+
+```css
+/* @import */
+
+@import "foo.css";
+
+@import "foo" screen;
+
+@import "http://foo.com/bar";
+
+@import url(foo);
+
+/* 引入多个文件 */
+
+@import "rounded-corners", "text-shadow";
+
+```
+
+@import在mixins或控制指令中嵌套是不可能的。
+
+**阅读**
+
+[Sass文档](http://sass.bootcss.com/)
