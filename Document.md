@@ -1,2 +1,2 @@
 
-[w3school](www.w3school.com.cn)
+[w3school](http://www.w3school.com.cn/)
