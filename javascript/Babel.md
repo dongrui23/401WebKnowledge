@@ -59,31 +59,31 @@ Babel 提供命令行工具@babel/cli，用于命令行转码。
 
 基本用法如下:
 
-# 转码结果输出到标准输出
+转码结果输出到标准输出
 
 `$ npx babel example.js`
 
-# 转码结果写入一个文件
+转码结果写入一个文件
 
-# --out-file 或 -o 参数指定输出文件
+--out-file 或 -o 参数指定输出文件
 
 `$ npx babel example.js --out-file compiled.js`
 
-# 或者
+或者
 
 `$ npx babel example.js -o compiled.js`
 
-# 整个目录转码
+整个目录转码
 
-# --out-dir 或 -d 参数指定输出目录
+--out-dir 或 -d 参数指定输出目录
 
 `$ npx babel src --out-dir lib`
 
-# 或者
+或者
 
 `$ npx babel src -d lib`
 
-# -s 参数生成source map文件
+-s 参数生成source map文件
 
 `$ npx babel src -d lib -s`
 
@@ -105,11 +105,11 @@ $ npx babel-node
 
 babel-node命令可以直接运行 ES6 脚本。将上面的代码放入脚本文件es6.js，然后直接运行。
 
-# es6.js 的代码
-
-# console.log((x => x * 2)(1));
+es6.js 的代码
 
 ```
+console.log((x => x * 2)(1));
+
 $ npx babel-node es6.js
 2
 ```
