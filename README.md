@@ -53,7 +53,7 @@ Source
 
 - [阮一峰ES6](http://es6.ruanyifeng.com/)
 
-- [技术胖带你玩转ES6](https://jspang.com/posts/2019/01/20/es6.html)
+- [技术胖带你玩转ES6-√](https://jspang.com/posts/2019/01/20/es6.html)
 
 [Scoped](https://github.com/dongrui23/WEB/blob/master/javascript/Scoped.md)
 
@@ -64,6 +64,12 @@ Source
 [this](https://github.com/dongrui23/WEB/blob/master/javascript/this.md)
 
 [relative path](https://github.com/dongrui23/WEB/blob/master/javascript/relative%20path.md)
+
+## [jquery](https://github.com/dongrui23/WEB/tree/master/jQuery)
+
+- [jquery.md](https://github.com/dongrui23/WEB/blob/master/jQuery/jQuery.md)
+
+- [jQuery+Ajax](https://www.bilibili.com/video/av22807707/?p=1)
 
 ## [Tools](https://github.com/dongrui23/WEB/tree/master/tools)
 
