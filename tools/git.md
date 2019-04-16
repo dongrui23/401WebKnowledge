@@ -13,5 +13,3 @@ $ git init
 
 $ git add 文件	
 ```
-
-[git简单使用](http://www.bootcss.com/p/git-guide/)

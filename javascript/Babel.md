@@ -1,4 +1,4 @@
-##Babel 转码器  
+## Babel 转码器  
 
 ```javascript 
 // 转码前
@@ -14,7 +14,7 @@ input.map(function (item) {
 
 安装：`$ npm install --save-dev @babel/core`
 
-##Babel 的配置文件是.babelrc，存放在项目的根目录下。使用 Babel 的第一步，就是配置这个文件。
+## Babel 的配置文件是.babelrc，存放在项目的根目录下。使用 Babel 的第一步，就是配置这个文件。
         
 该文件用来设置转码规则和插件，基本格式如下。
 
@@ -49,7 +49,7 @@ $ npm install --save-dev @babel/preset-react
 }
 ```
 
-##命令行转码
+## 命令行转码
 
 Babel 提供命令行工具@babel/cli，用于命令行转码。
 
@@ -87,7 +87,7 @@ Babel 提供命令行工具@babel/cli，用于命令行转码。
 
 `$ npx babel src -d lib -s`
 
-##babel-node
+## babel-node
 
 @babel/node模块的babel-node命令，提供一个支持 ES6 的 REPL 环境。它支持 Node 的 REPL 环境的所有功能，而且可以直接运行 ES6 代码。
 
@@ -114,7 +114,7 @@ $ npx babel-node es6.js
 2
 ```
 
-##@babel/register 模块
+## @babel/register 模块
 
 @babel/register模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用 Babel 进行转码。
 
@@ -137,7 +137,7 @@ $ node index.js
 
 需要注意的是，`@babel/register`只会对require命令加载的文件转码，而不会对当前文件转码。另外，由于它是实时转码，所以只适合在开发环境使用。
 
-##babel API
+## babel API
 
 如果某些代码需要调用 Babel 的 API 进行转码，就要使用@babel/core模块。
 
@@ -184,7 +184,7 @@ console.log(es5Code);
 
 上面代码中，transform方法的第一个参数是一个字符串，表示需要被转换的 ES6 代码，第二个参数是转换的配置对象。
 
-##@babel/polyfill
+## @babel/polyfill
 
 Babel 默认只转换新的 JavaScript 句法（syntax），而不转换新的 API，比如Iterator、Generator、Set、Map、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。
 
