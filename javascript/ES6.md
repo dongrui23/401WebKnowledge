@@ -1,5 +1,5 @@
 
-## ES6开发环境搭建
+### ES6开发环境搭建
 
 创建文件dist(保存转化的es5代码)，src(es6代码)，index.html(引入文件为dist下的js文件)
 
@@ -40,7 +40,7 @@
   "build": "babel src/index.js -o dist/index.js"
 ```
 
-## 新的声明方式
+### 新的声明方式
 
 **var 全局声明**
 
@@ -88,7 +88,7 @@ var a = '009';
 console.log(a);//报错
 ```
 
-## 变量的解构赋值
+### 变量的解构赋值
 
 **数组的解构赋值**
 
@@ -123,4 +123,60 @@ const [a,b,c]='555';//应用于权限有关
 console.log(a);
 console.log(b);
 console.log(c);
+```
+
+### 扩展运算符和rest运算符
+
+**对象扩展运算符（…）**
+
+传入的参数是不确定的
+
+```javascript
+function dongrui(...arg){
+  console.log(arg[0]);//1
+  console.log(arg[1]);//3
+  console.log(arg[2]);//2
+}
+dongrui(1,3,2);
+```
+
+对内存堆栈的引用
+
+```javascript
+let arr1 = ['number','string','object'];
+let arr2 = arr1;
+console.log(arr2);//["number", "string", "object"]
+arr2.push('boolean');
+console.log(arr1);//["number", "string", "object", "boolean"]
+
+
+let arr1 = ['number','string','object'];
+let arr2 =[...arr1];
+arr2.push('boolean');
+console.log(arr2);//["number", "string", "object", "boolean"]
+console.log(arr1);// ["number", "string", "object"]
+```
+
+**rest运算符**
+
+```javascript
+function aa(first,...arg) {
+  console.log(arg.length);//7
+}
+aa(0,1,2,3,4,5,6,7);
+
+
+function aa(first,...arg) {
+
+  //es5
+  for(let i=0;i<arg.length;i++){
+    console.log(aa[i]);//1-7
+  }
+
+  //es6 for…of循环,可以避免我们开拓内存空间
+  for(let val of arg){
+    console.log(val);//1-7
+  }
+}
+aa(0,1,2,3,4,5,6,7)
 ```
