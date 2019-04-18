@@ -3,6 +3,8 @@
 
 [stackoverflow](https://stackoverflow.com/tour)
 
+![](https://static001.geekbang.org/resource/image/76/e6/76698608d2e0cc3081a2ae54252a5ce6.jpg)
+
 ## [HTML](https://github.com/dongrui23/WEB/tree/master/html)
 
 [Canvas](https://www.yuque.com/airing/canvas)
