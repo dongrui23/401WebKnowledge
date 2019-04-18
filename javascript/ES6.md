@@ -180,3 +180,33 @@ function aa(first,...arg) {
 }
 aa(0,1,2,3,4,5,6,7)
 ```
+
+### 字符串模板
+
+技术胖说编译麻烦，就重新新建文件
+npm init之后，
+运行npm install -g live-server   // 全局安装live-server，作为前端服务器
+启动程序命令：live-server
+
+```
+let dr = 'dongrui23';
+let lal = `${dr}<br/>
+唯一的方法就是--口头确认--发email到责任人确认--通知上级`;
+document.write(lal);
+```
+
+```
+let dr = 1;
+let lal =2;
+let result = `${dr+lal}`;
+document.write(result);
+```
+
+
+
+
+
+
+
+
+
