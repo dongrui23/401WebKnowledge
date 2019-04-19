@@ -183,24 +183,155 @@ aa(0,1,2,3,4,5,6,7)
 
 ### 字符串模板
 
-技术胖说编译麻烦，就重新新建文件
-npm init之后，
-运行npm install -g live-server   // 全局安装live-server，作为前端服务器
-启动程序命令：live-server
+>技术胖说编译麻烦，就重新新建文件
 
 ```
+npm init之后
+
+运行npm install -g live-server   // 全局安装live-server，作为前端服务器，实时更新
+
+启动程序命令：live-server
+```
+
+```
+// 换行
 let dr = 'dongrui23';
 let lal = `${dr}<br/>
-唯一的方法就是--口头确认--发email到责任人确认--通知上级`;
+唯一的方法就是--<b>口头确认</b>--发email到责任人确认--通知上级`;
 document.write(lal);
 ```
 
 ```
+// 运算
 let dr = 1;
 let lal =2;
 let result = `${dr+lal}`;
 document.write(result);
 ```
+
+```
+// 查找
+let dr = 1;
+let lal = '<br/>
+唯一的方法就是--<b>口头确认</b>--发email到责任人确认--通知上级';
+document.write(lal.indexOf(dr)>0);// es5语法
+
+es6
+document.write(lal.includes(dr));// 记得s
+document.write(lal.startsWith(dr));// 查找开头
+document.write(lal.endsWith(dr));// 查找开头
+```
+
+```
+// 复制
+document.write('sting'.repeat(3));// string打印三次
+```
+
+### ES6数字操作
+
+```
+//二进制声明 Binary
+let binary = 0B010101;
+console.log(binary);//21
+
+//八进制声明 Octal
+let octal = 0o666;
+console.log(octal);//438
+```
+
+```
+判断是否是数字
+let a = 99/8;
+console.log(Number.isFinite(a));//T
+console.log(Number.isFinite('a'));//F
+console.log(Number.isFinite(NaN));//F
+console.log(Number.isFinite(undefined));//F
+```
+
+```
+//NaN
+console.log(Number.isNaN(NaN));//T
+```
+
+```
+//Number.isInteger,是否为整数
+let a = 3.14;
+console.log(Number.isInteger(a)); //F
+
+//！Number.isInteger,是否为浮点型
+let a = 3.14;
+console.log(!Number.isInteger(a));//T
+console.log(Number.parseFloat(a));//转化为浮点型
+```
+
+```
+es5最大数
+let a = Math.pow(2,53)-1;
+console.log(a);
+
+es6最大数
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(Number.isSafeInteger(a));//是否超过最大安全值
+```
+
+### ES6中新增的数组知识（1）
+
+```
+// Array.from()方法
+// json数组格式
+let json = {
+  "0" : "dongrui23",
+  "1" : "los",
+  "2" : "lakers",
+  length : 3
+}
+```
+
+```
+//es6 ,json转换为 Array
+let arr = Array.from(json);
+console.log(arr);
+```
+
+```
+// Array.of方法,转化为数组格式
+let arr = Array.of('[1,2,4,3,2,9],aa,sd,4');
+console.log(arr);
+```
+
+```
+// find() 实例方法,数组元素查找方法
+// value:当前查找的值，index:这个值得索引，arr:当前数组
+let arr = [1,9,7,3,6];
+console.log(arr.find(function(value,index,arr){
+  return value > 5;
+}))
+```
+
+### ES6中新增的数组知识（2）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
