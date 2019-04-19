@@ -193,7 +193,7 @@ npm init之后
 启动程序命令：live-server
 ```
 
-```
+```javascript
 // 换行
 let dr = 'dongrui23';
 let lal = `${dr}<br/>
@@ -201,7 +201,7 @@ let lal = `${dr}<br/>
 document.write(lal);
 ```
 
-```
+```javascript
 // 运算
 let dr = 1;
 let lal =2;
@@ -209,7 +209,7 @@ let result = `${dr+lal}`;
 document.write(result);
 ```
 
-```
+```javascript
 // 查找
 let dr = 1;
 let lal = '<br/>
@@ -222,14 +222,14 @@ document.write(lal.startsWith(dr));// 查找开头
 document.write(lal.endsWith(dr));// 查找开头
 ```
 
-```
+```javascript
 // 复制
 document.write('sting'.repeat(3));// string打印三次
 ```
 
 ### ES6数字操作
 
-```
+```javascript
 //二进制声明 Binary
 let binary = 0B010101;
 console.log(binary);//21
@@ -239,7 +239,7 @@ let octal = 0o666;
 console.log(octal);//438
 ```
 
-```
+```javascript
 判断是否是数字
 let a = 99/8;
 console.log(Number.isFinite(a));//T
@@ -248,12 +248,12 @@ console.log(Number.isFinite(NaN));//F
 console.log(Number.isFinite(undefined));//F
 ```
 
-```
+```javascript
 //NaN
 console.log(Number.isNaN(NaN));//T
 ```
 
-```
+```javascript
 //Number.isInteger,是否为整数
 let a = 3.14;
 console.log(Number.isInteger(a)); //F
@@ -264,19 +264,19 @@ console.log(!Number.isInteger(a));//T
 console.log(Number.parseFloat(a));//转化为浮点型
 ```
 
-```
-es5最大数
+```javascript
+// es5最大数
 let a = Math.pow(2,53)-1;
 console.log(a);
 
-es6最大数
+// es6最大数
 console.log(Number.MAX_SAFE_INTEGER);
 console.log(Number.isSafeInteger(a));//是否超过最大安全值
 ```
 
 ### ES6中新增的数组知识（1）
 
-```
+```javascript
 // Array.from()方法
 // json数组格式
 let json = {
@@ -287,19 +287,19 @@ let json = {
 }
 ```
 
-```
+```javascript
 //es6 ,json转换为 Array
 let arr = Array.from(json);
 console.log(arr);
 ```
 
-```
+```javascript
 // Array.of方法,转化为数组格式
 let arr = Array.of('[1,2,4,3,2,9],aa,sd,4');
 console.log(arr);
 ```
 
-```
+```javascript
 // find() 实例方法,数组元素查找方法
 // value:当前查找的值，index:这个值得索引，arr:当前数组
 let arr = [1,9,7,3,6];
@@ -309,6 +309,367 @@ console.log(arr.find(function(value,index,arr){
 ```
 
 ### ES6中新增的数组知识（2）
+
+```javascript
+// fill 填充,替换
+let arr = ['dongrui','los','12']; 
+arr.fill('web',2,3);// fill('替换的内容','start'，'end')
+console.log(arr);
+```
+
+```javascript
+// 数组循环
+let arr = ['dongrui','los','12']; 
+for(let item of arr.keys()){
+  console.log(item);//输出下标
+}
+
+let arr = ['dongrui','los','12']; 
+for(let [value,index] of arr.entries()){
+  console.log(value+':'+index);
+}
+```
+
+```javascript
+// 自定义循环
+// 数组循环
+let arr = ['dongrui','los','12']; 
+let list=arr.entries();
+console.log(list.next().value);// 第一个值
+console.log('---------------');
+console.log(list.next().value);
+console.log('~~~~~~~~~~~~~~~');
+console.log(list.next().value);
+```
+
+### ES6中的箭头函数和扩展
+
+主动抛出错误
+
+`throw new Error('This is error')`
+
+```javascript
+// es5
+function add(a,b) {
+  return a+b 
+}
+console.log(add(1,8));
+
+// es6
+var add =(a,b) => a+b;//var add =(a,b) =>{return a+b;}
+console.log(add(1,81));
+
+// 延时器 
+setTime(() => {
+  console.log('dongrui23')
+},1000)
+```
+
+### ES6中的函数和数组补漏
+
+```javascript
+//对象的函数解构json
+let json = {
+  a:'dongrui',
+  b:'los'
+}
+function ff({a,b='wwn'}){
+  console.log(a,b)
+} 
+ff(json);
+```
+
+```
+//数组解构
+let arr = ['dongrui','los','lakers'];
+function ff(a,b,c){
+  console.log(a,b,c)
+}
+ff(...arr);
+```
+
+```javascript
+//in的用法
+//判断对象
+let obj = {
+  a:'dongrui23',
+  b:'los'
+}
+console.log('a' in obj);
+```
+
+```javascript
+//判断数组
+let arr = ["aa",,,];
+console.log(arr.length);//这方法不用，容易产生业务逻辑错误
+console.log(0 in arr);//true,index
+```
+
+```javascript
+//数组遍历 
+//forEach
+let arr = ['dongrui23','los','lakers',35,23]
+arr.forEach((val,index) =>{
+  console.log(index,val);
+})
+//filter
+arr.filter(x =>console.log(x));
+//some
+arr.some(x =>console.log(x));
+//map
+console.log(arr.map(x =>'web'));//替换为web
+//1
+for(let item of arr){
+  console.log(item);
+}
+//2
+for(var i=0;i<arr.length;i++){
+  console.log(arr[i])
+}
+```
+
+```javascript
+//arr转换为String
+let arr = ['dongrui23','los','lakers']
+console.log(arr.toString());
+console.log(arr.join('-'));
+```
+
+### ES6中对象
+
+```javascript
+//赋值
+let name ='dongrui';
+let obj = {name};
+console.log(obj)
+
+//key值的构建
+let key = 'skill'
+var obja = {
+  [key]:'web'
+}
+console.log(obja)
+
+//自定义对象方法
+//es5
+let objb={
+  add:function(a,b){
+    return a+b;
+  }
+}
+console.log(objb.add(3,8))
+```
+
+```javascript
+//is
+let obj1={name:'shenz'};
+let obj2={name:'shenz'};
+console.log(obj1.name===obj2.name);//es5，True
+console.log(Object.is(obj1.name,obj2.name));//es6
+console.log(Object.is(+0,-0));//es6,False
+console.log(Object.is(NaN,NaN));//es6,True
+//ps: ===同值相等，is严格相等
+```
+
+```javascript
+//assign合并对象
+let a={a:'dongrui23'};
+let b={b:'view'};
+let c={c:'web'};
+let d = Object.assign(a,b,c);
+console.log(d);
+```
+
+### Symbol在对象中的作用
+
+```javascript
+//Symbol
+let a = Symbol();
+console.log(typeof(a))
+let b = Symbol('dongrui23');
+console.log(b)
+```
+
+```javascript
+//key值构建
+let dongrui23 = Symbol();
+let obj = {
+  [dongrui23]: 'okokok'
+}
+console.log(obj[dongrui23]);//要用方括号，点是没用的
+```
+
+```javascript
+let obj3 = {name:'dongrui23',address:'los'}
+let age = Symbol();
+obj3[age]=25;
+for(let item in obj3){
+  console.log(obj3[item]);
+}
+
+// console.log(obj3[age]);//对age的保护
+```
+
+### Set和WeakSet数据结构
+
+### map数据结构
+### 用Proxy进行预处理
+### promise对象的使用
+### class类的使用
+### 模块化操作
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
