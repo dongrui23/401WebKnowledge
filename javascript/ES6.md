@@ -591,8 +591,105 @@ console.log(map.has('dongrui23'));
 ```
 
 ### 用Proxy进行预处理
+
+```javascript
+//proxy 代理 ES6增强 对象和函数(方法) 生命周期 预处理
+
+let obj = {
+  add:function(val){
+    return val+100;
+  },
+  name:'los lakers'
+}
+let pro = new Proxy({
+  add:function(val){
+    return val+100;
+  },
+  name:'los lakers'
+},{
+  //get set apply
+  //get
+  get:function( target,key,property){
+    console.log('come in you');
+    // console.log(target);
+    return target[key];
+  },
+  set:function(target,key,value,receiver){
+    console.log(`setting ${key}= {value}`);
+    return target[key] = value;
+  }
+});
+console.log(pro.name);
+pro.name = 'lololo'
+console.log(pro.name);//记得返回值return
+```
+
+```javascript
+let target =function(){
+  return 'okko';
+}
+let handler = {
+  apply(target,ctx,args){
+    console.log('do it');
+    return Reflect.apply(...arguments);
+  }
+}
+let pro = new Proxy(target,handler);
+console.log(pro());
+```
+
 ### promise对象的使用
+
+```javascript
+//promise es5 回调地狱
+let state=1;
+ 
+function step1(resolve,reject){
+    console.log('1.开始-洗菜做饭');
+    if(state==1){
+        resolve('洗菜做饭--完成');
+    }else{
+        reject('洗菜做饭--出错');
+    }
+}
+ 
+ 
+function step2(resolve,reject){
+    console.log('2.开始-坐下来吃饭');
+    if(state==1){
+        resolve('坐下来吃饭--完成');
+    }else{
+        reject('坐下来吃饭--出错');
+    }
+}
+ 
+ 
+function step3(resolve,reject){
+    console.log('3.开始-收拾桌子洗完');
+     if(state==1){
+        resolve('收拾桌子洗完--完成');
+    }else{
+        reject('收拾桌子洗完--出错');
+    }
+}
+ 
+new Promise(step1).then(function(val){
+    console.log(val);
+    return new Promise(step2);
+ 
+}).then(function(val){
+     console.log(val);
+    return new Promise(step3);
+}).then(function(val){
+    console.log(val);
+    return val;
+});
+```
+
 ### class类的使用
+
+
+
 ### 模块化操作
 
 
