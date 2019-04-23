@@ -506,7 +506,7 @@ obj3[age]=25;
 for(let item in obj3){
   console.log(obj3[item]);
 }
-
+console.log(obj);
 // console.log(obj3[age]);//对age的保护
 ```
 
