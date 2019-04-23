@@ -688,191 +688,129 @@ new Promise(step1).then(function(val){
 
 ### class类的使用
 
+class声明
 
+```javascript
+//class
+class Coder{
+  name(val){
+    console.log(val);
+    return val;
+  }//不用逗号
+  skill(val){
+    console.log(this.name('dongrui23')+':'+ val);
+    
+  }
+}
+let dongrui23 = new Coder;
+// dongrui23.name('ad');
+dongrui23.skill('adc');
+```
 
+类的传参
+
+```javascript
+class Coder{
+  name(val){
+    console.log(val);
+    return val;
+  }//不用逗号
+  skill(val){
+    console.log(this.name('dongrui23')+':'+ val);
+  }
+  constructor(a,b){
+    this.a=a;
+    this.b=b;
+  }
+  add(){
+    return this.a + this.b
+  }
+}
+let dongrui23 = new Coder(1,2);
+console.log(dongrui23.add());
+```
+
+class继承
+
+```javascript
+class Coder{
+  name(val){
+    console.log(val);
+    return val;
+  }//不用逗号
+  skill(val){
+    console.log(this.name('dongrui23')+':'+ val);
+  }
+  constructor(a,b){
+    this.a=a;
+    this.b=b;
+  }
+  add(){
+    return this.a + this.b
+  }
+}
+//继承
+class htmler extends Coder{
+
+}
+let ok = new htmler;
+ok.name('dongrui23')
+```
 ### 模块化操作
 
+新建文件->src/temp.js
 
+`export var name = 'dongrui23';`
 
+src目录下命令行`babel-node index.js`
 
+index.js
 
+```javascript
+//export 输出
+//import 引入
+import {name} from './temp';
+console.log(name);
+```
 
+----------------------------
 
+temp.js
 
+```javascript
+var name = 'dongrui23';
+var b = 'lololo';
+var c = 'web';
+// export function add(a,b){
+//   return a+b;
+// }
 
+export{
+  name as a,
+  cname as b,
+  skill as c
+}
+```
 
+index.js
 
+```javascript
+import {name,cname,skill} from './temp';
+console.log(name,cname,skill);
+```
 
+=========================
 
+//export default && export
 
+```javascript
+export var name = 'dongrui23';
+var c = 'web';
+export function add(a,b){
+  return a+b;
+}
+import {name,add} from './temp';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export defalut var a = 'dongrui23';
+import shh(自己起的) from './temp';
+```
