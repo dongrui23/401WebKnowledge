@@ -506,11 +506,44 @@ obj3[age]=25;
 for(let item in obj3){
   console.log(obj3[item]);
 }
-console.log(obj);
 // console.log(obj3[age]);//对age的保护
 ```
 
 ### Set和WeakSet数据结构
+
+**Set**
+
+Set增删查
+
+```javascript
+//Set
+let setArr = new Set(['dongrui23','los','web']);
+
+setArr.add('lol');//增加
+console.log(setArr);
+//has,查找
+console.log(setArr.has('los'));
+//删除
+setArr.clear();
+console.log(setArr);
+//只删除一项
+setArr.delete('web');
+```
+
+遍历
+
+```javascript
+let setArr = new Set(['dongrui23','los','web']);
+//for..of
+for(let item of setArr){
+  console.log(item);
+}
+//forEach
+setArr.forEach((val) => console.log(val));
+//size
+console.log(setArr.size);//3
+```
+
 
 ### map数据结构
 ### 用Proxy进行预处理
