@@ -434,8 +434,22 @@ window、document、navigator.userAgent
 ## DOM
 
 DOM是哪种基本的数据结构？
+
+- 树
+
 DOM操作的常用API有哪些？
-DOM节点的attr和property有何区别？
+
+- 获取DOM节点，以及节点的property和Attribute
+
+- 获取父节点，获取子节点
+
+- 新增节点，删除节点
+
+DOM节点的Attribute和property有何区别？
+
+- property只是一个JS对象的属性的修改
+
+- Attribute是对html标签属性的修改
 
 ### DOM本质
 
@@ -517,11 +531,70 @@ div1=removeChild(child[0])
 ```
 
 ## BOM
+
+如何检测浏览器的类型
+
+```javascript
+var ua = navigator.userAgent
+var isChrome=ua.indexOf('Chrome')
+console.log(isChrome)
+```
+
+拆解url的各部分
+
+```javascript
+//location
+console.log(location.href)
+console.log(location.protocol)
+console.log(location.pathname)
+console.log(location.search)
+console.log(location.hash)
+```
+
 ### BOM操作
 
+navigator&screen
+
+```javascript
+//navigator
+var ua = navigator.userAgent
+var isChrome=ua.indexOf('Chrome')
+console.log(isChrome)
+
+//screen
+console.log(screen.width)
+console.log(screen.height)
+```
+
+location&history
+
+```javascript
+//location
+console.log(location.href)
+console.log(location.protocol)//'http:' 'https:'
+console.log(location.pathname)// '/learn/199'
+console.log(location.search)
+console.log(location.hash)
+
+//history
+history.back()
+history.forward()
+```
 
 ## 事件
 
+编写一个通用的事件监听函数
+描述事件冒泡流程
+对于一个无限下拉加载图片的页面，如何给每个图片绑定事件
+
+通用事件绑定
+
+```
+ 
+```
+
+事件冒泡
+代理
 
 ## Ajax
 ### Ajax-XMLHttpRequst
