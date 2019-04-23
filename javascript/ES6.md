@@ -544,8 +544,52 @@ setArr.forEach((val) => console.log(val));
 console.log(setArr.size);//3
 ```
 
+**WeakSet**
+
+```javascript
+//WeakSet
+let weakObj = new WeakSet();//直接加是不行的  
+let obj = {a:'dongrui',b:'los'};
+let obj1=obj;//不会重复
+
+weakObj.add(obj);
+weakObj.add(obj1);
+
+console.log(weakObj);
+```
 
 ### map数据结构
+
+```javascript
+//map
+  let json={
+    name:'dongrui23',
+    skill:'web'
+  };
+console.log(json.name);
+
+//=>
+var map = new Map();
+map.set(json,'iam');
+console.log(map);
+map.set('dongrui23',json);
+console.log(map);
+
+//map增删查
+//get
+console.log(map.get(json));
+console.log(map.get('dongrui23'));
+
+//delete
+// map.delete(json);
+// console.log(map);
+// map.clear();
+console.log(map.size);//2
+
+//has查找
+console.log(map.has('dongrui23'));
+```
+
 ### 用Proxy进行预处理
 ### promise对象的使用
 ### class类的使用
