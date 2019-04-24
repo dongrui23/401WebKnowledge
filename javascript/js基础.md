@@ -728,6 +728,10 @@ bindEvent(div1,'click',function(e){
 
 跨域的几种实现方式
 
+- JSONP
+
+- 服务器端设置http header
+
 ### Ajax-XMLHttpRequst
 
 ```javascript
@@ -829,10 +833,47 @@ window.callback = function(data){
 
 服务器端设置http header
 
+- 另外一个解决跨域的简洁方法，需要服务器端来做
 
+- 是解决跨域问题一个趋势
 
 ### 储存
 
+请描述一下cookie，sessionStorage和localStorage的区别？
+
+- 容量
+
+- 是否会携带到ajax
+
+- API易用性
+
+cookie
+
+- 本身用于客户端和服务器端通信
+
+- 但是它有本地存储的功能，于是就被'借用'
+
+- 使用document.cookie = ...获取和修改即可
+
+cookie用于存储的缺点
+
+- 存储量太小，只有4kb
+
+- 所有http请求都带着，会影响获取资源的效率
+
+- API简单，需要封装才能用document.cookie = ...
+
+sessionStorage和localStorage
+
+- HTML5专门为存储而设计，最大容量5M
+
+- API简单易用:
+
+- localStorage.setItem(key,value);localStorage.getItem(key);
+
+##关于开发环境
+
+了解面试者的经验
 
 ## git
 ### git - 常用命令
