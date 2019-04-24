@@ -584,21 +584,253 @@ history.forward()
 ## 事件
 
 编写一个通用的事件监听函数
+
 描述事件冒泡流程
+
+- DOM树形结构
+
+- 事件冒泡
+
+- 阻止冒泡
+
+- 冒泡的应用
+
 对于一个无限下拉加载图片的页面，如何给每个图片绑定事件
+
+- 使用代理
+
+- 知道代理的两个优点
 
 通用事件绑定
 
+```javascript
+var btn = document.getElementById('btn1')
+btn.addEventListener('click',function(event){
+  console.log('clicked)
+})
+
+function bindEvent(elem,type,fn){
+  elem.addEventListener(type,fn)
+}
+var a = document.getElementById('link1)
+bindEvent(a,'click',function(e){
+  e.preventDefault()//阻止默认行为
+  alert('clicked')
+})
 ```
- 
-```
+
+关于IE低版本的兼容性
+
+- IE低版本使用attachEvent绑定事件，和W3C标准不一样
+
+- IE低版本使用量以非常少。很多网络都早已不支持
+
+- 建议对IE低版本的兼容性：了解即可，无需深究
+
+- 如果遇到对IE低版本要求苛刻的面试，果断放弃
 
 事件冒泡
+
+```html
+<body>
+  <div id='div1'>
+    <p id='p1'>激活</p>
+    <p id='p2'>取消</p>
+    <p id='p3'>取消</p>
+    <p id='p4'>取消</p>
+  </div>
+  <div id='div2'>
+    <p id='p5'>取消</p>
+    <p id='p6'>取消</p>
+  </div>
+</body>
+```
+
+```javascript
+var p1 = document.getElementById('p1')
+var body = document.body
+bindEvent(p1,'click',function(e){
+  e.stopPropatation()
+  alert('激活')
+})
+bindEvent(body,'click',function(e){
+  alert('取消')
+})
+```
+
 代理
 
+```html
+<div id='div1'>
+  <a href="#">a1</a>
+  <a href="#">a2</a>
+  <a href="#">a3</a>
+  <a href="#">a4</a>
+  <!-- 会随时新增更多a标签 -->
+</div>
+```
+
+```javascript
+var div1 = document.getElementById('div1')
+div1.addEventListener('click',function(e){
+  var target = e.target
+  if(target.nodeName === 'A'){
+    alert(target.innerHTML)
+  }
+})
+```
+
+完善通用绑定事件的函数
+
+```javascript
+function bindEvent(elem,type,selector,fn){
+  if(fn == null){
+    fn = selector
+    selector = null
+  }
+  elem.addEventListener(type,function(e){
+    var target
+    if(selector){
+      target = e.target
+      if(target.matches(selector)){
+        fn.call(target,e)
+      }
+    }else{
+      fn(e)
+    }
+  })
+}
+```
+
+```javascript
+//使用代理
+var div1 = document.getElementById('div1')
+bindEvent(div1,'click','a',function(e){
+  console.log(this.innerHTML)
+})
+
+//不使用代理
+var a = document.getElementById('a1')
+bindEvent(div1,'click',function(e){
+  console.log(a.innerHTML)
+})
+```
+
+代理的好处
+
+- 代码简洁
+
+- 减少浏览器内存占用
+
 ## Ajax
+
+手写编写一个ajax，不依赖第三方库
+
+跨域的几种实现方式
+
 ### Ajax-XMLHttpRequst
+
+```javascript
+var xhr = new XMLHttpRequest()
+xhr.open('GET','/api',false)
+xhr.onreadystatechange = function(){
+  //这里的函数异步执行，可参考之前JS基础中的异步模块
+  if(xhr.readyState == 4){
+    if(xhr.status == 200){
+      alert(xhr.responseText)
+    }
+  }
+}
+xhr.send(null)
+```
+
+IE兼容性问题
+
+IE低版本使用ActiveXObject，和W3C标准不一样，同上
+
+状态码说明
+
+```javascript
+xhr.onreadystatechange = function(){
+  if(xhr.readyState == 4){
+    if(xhr.status == 200){
+      alert(xhr.responseText)
+    }
+  }
+}
+```
+
+readyState
+
+- 0 - (未初始化)还没有调用send()方法
+
+- 1 - (载入)已调用send()方法，正在发送请求
+
+- 2 - (载入完成)send()方法执行完成，已经接收到全部响应内容
+
+- 3 - (交互)正在解析响应内容
+
+- 4 - (完成)响应内容解析完成，可以在客户端调用了
+
+status
+
+- 2xx - 表示成功处理请求。如200
+
+- 3xx - 需要重定向，浏览器直接跳转 
+
+- 4xx - 客户端请求错误，如404
+
+- 5xx - 服务器端错误
+
 ### 跨域
+
+什么是跨域
+
+- 浏览器有同源策略，不允许ajax访问其他接口
+
+- 跨域条件：协议、域名、端口，有一个不同就算跨域
+
+可以跨域的三个标签
+
+- 但是有三个标签允许跨域加载资源
+
+- <img src=xxx>
+
+- <link href=xxx>
+
+- <script src=xxx>
+
+三个标签的场景
+
+- <img>用于打点统计，统计网站可能是其他域
+
+- <link><script>可以使用CDN，CDN的也是其他域
+
+- <script>可以用于JSONP
+
+跨域注意事项
+
+- 所有的跨域请求都必须经过信息提供允许
+
+- 如果未经允许即可获取，那是浏览器同源策略出现漏洞
+
+JSONP实现原理
+
+```javascript
+<script>
+window.callback = function(data){
+  //这是我们跨域得到的信息
+  console.log(data)
+}
+</script>
+<script src='url'></script>
+//以上将返回 callback({x:100,y:200})
+```
+
+服务器端设置http header
+
+
+
 ### 储存
 
 
