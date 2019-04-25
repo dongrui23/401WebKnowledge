@@ -13,3 +13,5 @@ $ git init
 
 $ git add 文件	
 ```
+
+![](https://github.com/dongrui23/WEB/blob/master/tools/git.png)

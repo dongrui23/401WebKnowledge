@@ -160,3 +160,5 @@ toString()：转换数组
 ```
 array = []; //清空数组
 ```
+
+![](https://github.com/dongrui23/WEB/blob/master/javascript/%E6%95%B0%E7%BB%84.png)
