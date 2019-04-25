@@ -3,7 +3,7 @@
 
 [stackoverflow](https://stackoverflow.com/tour)
 
-![](https://static001.geekbang.org/resource/image/76/e6/76698608d2e0cc3081a2ae54252a5ce6.jpg)
+<img src='https://static001.geekbang.org/resource/image/76/e6/76698608d2e0cc3081a2ae54252a5ce6.jpg' width=300px />
 
 ## [HTML](https://github.com/dongrui23/WEB/tree/master/html)
 
