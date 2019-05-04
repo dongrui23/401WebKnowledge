@@ -1,11 +1,10 @@
-
-(<a href=http://www.w3school.com.cn/" target="_blank">w3cschool</a>)
-
-[w3cschool](http://www.w3school.com.cn/)
-
-[stackoverflow](https://stackoverflow.com/tour)
-
 <img src='https://static001.geekbang.org/resource/image/76/e6/76698608d2e0cc3081a2ae54252a5ce6.jpg' width=300px />
+
+[w3cschool文档](http://www.w3school.com.cn/)
+
+[stackoverflow搜索](https://stackoverflow.com/tour)
+
+<hr>
 
 ## [HTML](https://github.com/dongrui23/WEB/tree/master/html)
 
@@ -21,6 +20,8 @@
 
 - [index-3](https://github.com/dongrui23/WEB/blob/master/css/index-3.md)
 
+<hr>
+
 **[Source](https://github.com/dongrui23/WEB/blob/master/css/cssSource.md)**
 
 - [Iconfont图标库](https://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2)
@@ -34,6 +35,8 @@
 - [CSS Tricks](https://lhammer.cn/You-need-to-know-css/#/)
 
 - [Animate.css](https://daneden.github.io/animate.css/)
+
+<hr>
 
 **[Sass](https://github.com/dongrui23/WEB/blob/master/css/sass.md)**
 
@@ -49,6 +52,8 @@ Source
 
 [Array](https://github.com/dongrui23/WEB/blob/master/javascript/Array.md)
 
+<hr>
+
 [ES6](https://github.com/dongrui23/WEB/blob/master/javascript/ES6.md)
 
 - [es6-features](https://es6-features.org/#Constants)
@@ -58,6 +63,8 @@ Source
 - [阮一峰ES6](http://es6.ruanyifeng.com/)
 
 - [技术胖带你玩转ES6-√](https://jspang.com/posts/2019/01/20/es6.html)
+
+<hr>
 
 [Scoped](https://github.com/dongrui23/WEB/blob/master/javascript/Scoped.md)
 
