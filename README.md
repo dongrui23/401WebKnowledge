@@ -1,7 +1,6 @@
 > [w3cschool文档](http://www.w3school.com.cn/)
-> [stackoverflow搜索](https://stackoverflow.com/tour)
 
-<hr>
+> [stackoverflow搜索](https://stackoverflow.com/tour)
 
 ## [HTML](https://github.com/dongrui23/WEB/tree/master/html)
 
