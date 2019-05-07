@@ -1,8 +1,5 @@
-<img src='https://static001.geekbang.org/resource/image/76/e6/76698608d2e0cc3081a2ae54252a5ce6.jpg' width=300px />
-
-[w3cschool文档](http://www.w3school.com.cn/)
-
-[stackoverflow搜索](https://stackoverflow.com/tour)
+> [w3cschool文档](http://www.w3school.com.cn/)
+> [stackoverflow搜索](https://stackoverflow.com/tour)
 
 <hr>
 
