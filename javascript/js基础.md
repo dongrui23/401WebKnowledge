@@ -871,14 +871,29 @@ sessionStorage和localStorage
 
 - localStorage.setItem(key,value);localStorage.getItem(key);
 
-##关于开发环境
+## 开发环境
 
-了解面试者的经验
+面试官想通过开发环境了解面试者的经验(聊天为主)
+
+**关于开发环境**
+
+- IDE(写代码的效率) > vscode/webstom/sublime/atom > 常用插件!!!
+
+- git(代码版本管理，多人协作开发 -> 大型项目)
+
+- JS模块化
+
+- 打包工具
+
+- 上线回滚的流程
 
 ## git
-### git - 常用命令
 
+代码版本管理，多人协作开发
 
+**git - 常用命令**
+
+常用Git命令
 
 ## 模块化
 ### 模块化 - AMD

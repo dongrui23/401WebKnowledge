@@ -4,7 +4,7 @@
 
 ## 目的
 
-记录前端基础知识。
+Document front-end basics.
 
 ### 目录 
 
