@@ -14,6 +14,6 @@ $ git init
 $ git add 文件	
 ```
 
-![](https://github.com/dongrui23/WEB/blob/master/tools/git.png)
+![](https://github.com/dongrui23/PICTURE/blob/master/web/git.png)
 
 [好玩的学习git](https://learngitbranching.js.org/)
