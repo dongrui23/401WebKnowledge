@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>component-3</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>component-3</h1>
+  <hr>
+  <div id='app'>
+    <dongrui></dongrui>
+  </div>
+
+  <script>
+    var city = {
+      template:`<div style='color:green'>i love 意大利!</div>`
+    }
+    var dr = {
+      template:`
+      <div>
+        <p>Roman in 意大利!</p>
+        <city></city>
+      </div>`,
+      components:{
+        'city':city
+      }
+    }
+    
+    var app = new Vue({
+      el:'#app',
+      components:{
+        'dongrui':dr ,
+      }
+    })
+  </script>
+</body>
+</html>

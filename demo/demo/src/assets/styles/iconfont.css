@@ -1,0 +1,16 @@
+@font-face {font-family: "iconfont";
+  src: url('./iconfont/iconfont.eot?t=1556152551139'); /* IE9 */
+  src: url('./iconfont/iconfont.eot?t=1556152551139#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPUAAsAAAAACBQAAAOGAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqDKIJwATYCJAMUCwwABCAFhG0HVBsIB8gekqRfAgqohQMACRJQBN/v99tz5fMwbZBEoyefTsKbeIJQCI0SaJRiJRGSl8DR/v5/9uyjEYVEKsFIoL+Q7sKcZkjCRaixggOgLaZAKaAS+4W98Gz1Dy7HP7IE5tlbLmMuG2tigHFAWTjWpMDCsEAS9RTEs+ngfwL2E+gwRg7atrh+hqZCHxaIW39dgmZCq1SkhkZoFcwt7KgMqiblExsAHr3vxx+oBBVIagb9oJ3zExX2P8WeunEaKQ2OcyY8DGcGv4iMeaAQd4XWW5XAPw/rUDtXrQMdGkkaqp3KU/lTN4lEJNyQvMP4wyMrkiBaoCd3gXUaKHyKWQSZTxVukawcBInPbv617FVBBxrcA0908jhLyDQis7MxsdLhlV0ZvRJHbV2Qno80Vg/s14/sRw/kcGOPS8H0/HD6wMIMbeGUdFdf2qBU52Qk0+gsH1nznDrzxIIgect8otdHmrT3trAxncPnLZ3T972h3fPoyPH42Onw0OHgwGfHWRDZ4z3caxo72tgdtnWt7RzdMr0ODtA+4WeEswHD/+5qSx+Jvea0zqWm9lUpm8f/n+GwZcK7xyykpMiyx8u1bIQUlYTA6N0qecN0QdyhSyY9oU10R2yA3En2ueJnlH9PxnJ8Y491x/t9LXenPMEpbS9+fsZ9uJcV94IdscFCZJ9hGV5cxLaolGODw7AgKkN+kXaDrNVfvNGta4Oc3jHvE7IA//uFHzt71DTiH84MLuBobPQZf+P3kTlAGOj9pqIlA/h4Fn6G+j+tmzUTfAuZxryPVlb8ACijgkDX1aJIVAqivgLVKsyl879PxadyDrgaRjn8GIKhMRy5kjZTBbPGOJBCmoeq0wK0NNagwxzLxZ0GRaiIQg3MyiYQ+gxA0uMFsj6bSCFdQjXiE1r6AkOH3WBds9Nk+NOYRpAUk4oeBfor7GmmIW77qY+kJ44UxgUe5ZXCyHShsoJSOnRGHoVDTIhM9XlUrKFPyC5akMPIcRjDQrZIicd+ceyvFBV9ip409mQX2raEiCRGVMhDAflTMI/mNI61M59/RHQJhySsqKkyvyKhiNk6UqZAqQFyJvUa1VzKI5FSurkoMQ3yEWIuZEHMxDH8DIUV97IQRWzMr4PXt6JI6/k0lY6nl7v3uAk66BfXIBBGZIgcUUDvtb/kxZxIYcjZUkuDIiraz6jqPlZXIzHrkaFJlDAAAAA=') format('woff2'),
+  url('./iconfont/iconfont.woff?t=1556152551139') format('woff'),
+  url('./iconfont/iconfont.ttf?t=1556152551139') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont/iconfont.svg?t=1556152551139#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

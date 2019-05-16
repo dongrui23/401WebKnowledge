@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>computed Option 计算选项</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>computed Option 计算选项</h1>
+  <hr>
+  <div id='app'>
+    <p>{{newPrice}}</p>
+    <ul>
+      <li v-for='list in reverseNews'>{{list.title}} -- {{list.date}}</li>
+    </ul>
+  </div>
+
+  <script>
+    var newLists =  [
+      {title:'告诉你一个好消息！再上25天班又是小长假',date:'星期天'},
+      {title:'定了 养老金上调金额公布!7月15日到手 这5类人却拿不到',date:'星期一'},
+      {title:'股神”巴菲特：金钱买不到快乐 我喜爱的是这些',date:'星期三'},
+      {title:'广深高速、广河高速...今日16时将迎返程交通高峰',date:'星期五'}
+    ]
+    var app = new Vue({
+      el:'#app',
+      data:{
+        price:100,
+        newLists:newLists
+      },
+      computed:{
+        newPrice(){
+          return this.price = '￥' + this.price + '元';
+        },
+        reverseNews(){
+          return this.newLists.reverse()
+        }
+      }
+    })
+  </script>
+</body>
+</html>

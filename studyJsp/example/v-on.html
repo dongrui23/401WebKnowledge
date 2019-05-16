@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on 实例</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>v-on 实例</h1>
+  <hr>
+  <div id='app'>
+    湖人队得分：{{fraction}} --- 凯尔特人得分：{{fraction2}}<br/><br>
+    <button v-on:click="add">add</button>
+    <button @click="reduce">reduce</button><br><br>
+    <input @keyup.enter='enterUP' v-model='setp2' />
+  </div>
+
+  <script>
+    var app = new Vue({
+      el:'#app',
+      data:{
+        fraction :89,
+        fraction2:89,
+        setp2:1
+      },
+      methods:{
+        add () {
+          this.fraction++
+        },
+        reduce () {
+          this.fraction--
+        },
+        enterUP () {
+        this.fraction = this.fraction + parseInt(this.setp2)
+      }
+      }
+    })
+  </script>
+</body>
+</html>

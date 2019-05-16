@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>实例方法</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>实例方法</h1>
+  <hr>
+  <div id='app'></div>
+  <p><button onclick='destroy()'>卸载</button></p>
+  <p><button onclick='reload()'>刷新</button></p>
+  <p><button onclick='tick()'>更改数据</button></p>
+
+  <script>
+    var dongrui = Vue.extend({
+      template:`<p>{{message}}</p>`,
+      data(){
+        return{
+          message:'hello world !'
+        }
+      },
+      mounted(){
+        console.log('mounted出现');
+      },
+      destroyed(){
+        console.log('destroy 销毁之后');
+      },
+      updated(){
+        console.log('updated 更新之后')
+      }
+    })
+    var vm = new dongrui().$mount('#app');
+
+    function destroy() {
+      vm.$destroy();
+    }
+    function reload() {
+      vm.$forceUpdate()
+    }
+    function tick(){
+      vm.message="update message info ";
+      vm.$nextTick(function(){
+          console.log('message更新完后我被调用了');
+      })
+    } 
+  </script>
+</body>
+</html>

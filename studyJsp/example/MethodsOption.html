@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MethodsOption</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>MethodsOption</h1>
+  <hr>
+  <div id='app'>
+    {{a}}
+    <p><button @click='add(2,$event)'>add</button></p>
+    <p><btn @click.native='add(2)'></btn></p>
+  </div>
+  <button onclick='app.add(3)'>waibu</button>
+
+  <script>
+    var btn = {
+      template:`<button>LA</button>`
+    }
+    
+    var app = new Vue({
+      el:'#app',
+      data:{
+        a:1
+      },
+      components:{
+        "btn":btn
+      },
+      methods:{
+        add(num,event){
+          if(num!=''){
+            this.a+=num
+          }
+          else{
+            this.a++
+          }
+          console.log(event);
+        }
+      }
+    })
+  </script>
+</body>
+</html>

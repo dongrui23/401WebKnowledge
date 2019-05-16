@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Watch 选项 监控数据</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>Watch 选项 监控数据</h1>
+  <hr>
+  <div id='app'>
+    <p>今日温度: {{temperature}}<sup>。</sup></p>
+    <p>穿衣建议: {{DressingAdvice}}</p>
+    <p>
+      <button @click='Raise'>升高温度</button>
+      <button @click='Reduce'>降低温度</button>
+    </p>
+  </div>
+
+  <script>
+    var DressingAdviceArray = ['T-shirt','秋衣','大衣'];
+    var app = new Vue({
+      el:'#app',
+      data:{
+        temperature:14,
+        DressingAdvice:'秋衣'
+      },
+      methods:{
+        Raise(){
+          this.temperature+=5;
+        },
+        Reduce(){
+          this.temperature-=5;
+        }
+      },
+      // watch:{
+      //   temperature(newVal,oldVal){
+      //     if(newVal>=26){
+      //       this.DressingAdvice = DressingAdviceArray[0]
+      //     }
+      //     else if(newVal<26 && newVal>0){
+      //       this.DressingAdvice = DressingAdviceArray[1]
+      //     }
+      //     else{
+      //       this.DressingAdvice = DressingAdviceArray[2]
+      //     }
+      //   }
+      // }
+    })
+
+    //实例shuxing监听
+    app.$watch('temperature',function(newVal,oldVal){
+      if(newVal>=26){
+        this.DressingAdvice = DressingAdviceArray[0]
+      }
+      else if(newVal<26 && newVal>0){
+        this.DressingAdvice = DressingAdviceArray[1]
+      }
+      else{
+        this.DressingAdvice = DressingAdviceArray[2]
+      }
+    })
+
+  </script>
+</body>
+</html>

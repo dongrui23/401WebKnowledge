@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-bind 指令</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>v-bind 指令</h1>
+  <hr>
+  <div id='app'>
+    <p><img v-bind:src="imgSrc" alt="" width="300px"></p>
+    <p><a :href="webUrl" target='_blank'>我所理解的前端</a></p>
+    <hr>
+    <div :class='className'>1、绑定Class</div>
+    <div :class='{classA:isOk}'>2、绑定Class中的判断</div>
+    <div :class='[classA,classB]'>3、绑定Class中的数组</div>
+    <div :class='isOk?classA:classB'>4、绑定Class中的三元运算符</div>
+    <hr>
+    <div>
+      <input type="checkbox" id='isOk' v-model='isOk'>
+      <label for="isOk">isOk={{isOk}}</label>
+    </div>
+    <hr>
+    <div :style="{color:blue,fontSize:font}">5、绑定Style</div>
+    <div :style="styleObject">6、对象绑定Style</div>
+  </div>
+
+  <style>
+    .classA{
+      color:red;
+    }
+    .classB{
+      font-size:150%;
+    }
+  </style>
+  
+  <script>
+    var app = new Vue({
+      el:'#app',
+      data:{
+        imgSrc:"https://i0.hdslb.com/bfs/archive/689f06336b83622bf87c2374febcf4e71ce80026.jpg@880w_440h.jpg",
+        webUrl:'https://www.cnblogs.com/Smiled/p/8377188.html',
+        className:'classA',
+        isOk:false,
+        classA:'classA',
+        classB:'classB',
+        blue:'blue',
+        font:'20px',
+        styleObject:{
+          color:'green',
+          fontSize:'24px'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
