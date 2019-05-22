@@ -1,13 +1,56 @@
 
 ## 变量类型和计算
+
+- JS中使用typeof能得到的哪些类型
+图
+- 何时使用===，何时使用==
+```
+if(obj.a == null){
+  //obj.a===null || obj.a === undefined
+  //jquery源码推荐写法
+}
+```
+- JS中有哪些内置函数
+图
+- JS变量按照储存方式区分为哪些类型，并描述其特点
+图
+- 如何理解JSON
+图
+
+变量类型
+- 值类型vs引用类型
+- typeof运算符详解
+图
+变量计算-强制类型转换
+- 字符串拼接
+- ==运算符
+- if语句
+- 逻辑运算
+
 **es6 typeof symbol**
 
+```
+var s=Symbol()
+typeof s//Symbol
+symbol类型
+```
 
 ## 原型和原型链
+
+- 如何准确判断一个变量是数组类型
+- 写一个原型链继承的例子
+- 描述new一个对象的过程
+- zepto(或其他框架)源码中如何使用原型链
 ### 构造函数
+
+
+
 ### 5个原型规则
+
 ### 原型链
+
 **原型链**
+
 **instance**
 
 
@@ -798,19 +841,19 @@ status
 
 - 但是有三个标签允许跨域加载资源
 
-- <img src=xxx>
+- `<img src=xxx>`
 
-- <link href=xxx>
+- `<link href=xxx>`
 
-- <script src=xxx>
+- `<script src=xxx>`
 
 三个标签的场景
 
-- <img>用于打点统计，统计网站可能是其他域
+- `<img>`用于打点统计，统计网站可能是其他域
 
-- <link><script>可以使用CDN，CDN的也是其他域
+- `<link>``<script>`可以使用CDN，CDN的也是其他域
 
-- <script>可以用于JSONP
+- `<script>`可以用于JSONP
 
 跨域注意事项
 
@@ -896,28 +939,295 @@ sessionStorage和localStorage
 常用Git命令
 
 ## 模块化
+
+**不使用模块化**
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97%E5%8C%96.png)
+
+- util.js getFormatDate函数
+
+- a-util.js aGetFormatDate函数  使用getFormataDate
+
+- a.js aGetFormatDate
+
+```
+//util.js
+function getFormatDate(data,type){}
+```
+
+引用：
+
+```
+<script src='util.js'></script>
+<script src='a-util.js'></script>
+<script src='a.js'></script>
+
+<!-- 1.这些代码中的函数必须是全局变量，才能暴露给适用方。全局变量污染 -->
+<!-- 2.依赖问题，互相依赖 -->
+```
+
+**使用模块化**
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97%E5%8C%96.png)
+
+```
+//util.js
+function FormatDate(){}
+//a-util.js
+var getFormatDate=require('util.js)
+<!-- 直接`<script src='a.js'></script>`,其他的根据依赖关系自动引用 -->
+<!-- 那两个函数，没必要做成全局变量，不会带来污染和覆盖 -->
+```
+
 ### 模块化 - AMD
+
+工具：require.js
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/require.js.png)
+
+引入：
+
+`<script src='/require.min.js' data-main='./main.js'></script>`
+
+全局define函数
+
+全局require函数
+
+依赖JS会自动、异步加载
+
 ### 模块化 - CommonJS
 
+nodejs模块化规范，现在被大量用于前端，原因:
 
+- 前端开发依赖的插件和库,都可以从npm中获取
+
+- 构建工具的高度自动化，使得使用npm的成本非常低
+
+- CommonJS不会异步加载JS，而是同步一次性加载出来
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/common.png)
+
+**AMD与CommonJS的使用场景**
+
+- 需要异步加载JS，使用AMD
+
+- 使用了npm之后建议使用CommonJS
 
 ## 构建工具
-### 构建工具 - 安装nodejs
-### 构建工具 - 安装webpack
-### 构建工具 - 配置webpack
-### 构建工具 - 使用jquery
-### 构建工具 - 压缩JS
 
+**构建工具 - 安装nodejs**
 
+**构建工具 - 安装webpack**
+
+**构建工具 - 配置webpack**
+
+webpack.config.js
+
+```
+var path = require('path')
+var webpack = require('webpack)
+
+module.exports = {
+  context:path.resolve(_dirname,'/src'),
+  entry: {
+    app:'./app.js'
+  },
+  output:{
+    path:path.resolve(_dirname,'./dist'),
+    filename:'bundle.js'
+  }
+}
+```
+
+**构建工具 - 使用jquery**
+
+```
+var $ =require('jquery')//首先npm安装jquery
+
+var $root=$('#root')
+$root.html('<p>jquery</p>')
+```
+
+**构建工具 - 压缩JS**
+
+webpack.config.js
+
+```
+module exports={
+  plugins:[
+    new webpack.optimize.UglifyJsPlugin()
+  ]
+}
+```
 
 ## 上线回滚
+
 ### 上线回滚 - 上线回滚流程
+
+**上线流程要点**
+
+- 将测试完成的代码提交到git版本库的master分支
+
+- 将当前服务器的代码全部打包并记录版本号，备注
+
+- 将master分支的代码提交覆盖到线上服务器，生成新的版本号
+
+**回滚流程要点**
+
+- 将当前服务器的代码打包并记录版本号，备份
+
+- 将备份的上一个版本号解压，覆盖到线上服务器，并生成新的版本号
+
 ### 上线回滚 - linux基础命令
 
-
+```
+登陆
+目录操作
+mkdir a创建a文件
+ls看名字
+ll 看a
+cd a进入a文件
+pwd目录路径
+cd ..返回上一级目录
+rm -rf -a删除文件夹
+vi a.js 创建a.js，退出:wq
+cp a.js a1.js拷贝a到a1去
+mkdir src
+mv a1.js src/a1.js移动a1到src目录下
+rm a.js删除a.js文件
+vim a.js创建a.js,点键盘'i'输入，点'esc'就无法输入;保存-esc:w+回车，退出-:q
+vim a.js看内容
+cat a.js直接看a.js全部内容
+head a.js看前一节部分
+tail a.js看尾部一部分
+head  -n 2 a.js看前两行
+tail -n 2 a.js看后两行
+grep '2yy' a.js搜索关键字那一行
+```
 
 ## 页面加载
+
+- 从输入url到得到html的详细过程
+
+ps：2）加载一个资源的过程
+
+- window.onload和DOMContentLoaded的区别
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/window.onload%E5%92%8CDOMContentLoaded%E7%9A%84%E5%8C%BA%E5%88%AB.png)
+
+-- 页面的全部资源加载完成才会执行，包括图片、视频等=onload
+
+-- DOM渲染完即可执行，此时图片、视频还没有加载完=DOMContentLoaded
+
 ### 页面加载 - 渲染过程
+
+1）加载资源的形式
+
+- 输入url(或跳转页面)加载html
+
+- 加载html中的静态资源(img/css/.js)
+
+2）加载一个资源的过程
+
+- 浏览器根据DNS服务器得到域名的IP地址
+
+- 向这个IP的机器发送http请求
+
+- 服务器收到、处理并返回http请求
+
+- 浏览器得到返回内容
+
+3）浏览器渲染页面的过程
+
+- 根据HTML结构生成DOM Tree
+
+- 根据CSS生成CSSOM
+
+- 将DOM和CSSOM整合形成RenderTree
+
+- 浏览器根据RenderTree开始渲染和展示
+
+- 遇到`<script>`时，会执行并阻塞渲染//js会改变DOM树
+
 ### 性能优化 - 优化策略
-### 安全性 - XSS
-### 安全性 - XSRF
+
+**原则**
+
+- 多使用内存、缓存或者其他方法
+
+- 减少CPU计算、减少网络
+
+1）加载资源优化
+
+- 静态资源的压缩合并
+
+- 静态资源缓存
+
+- 使用CDN让资源加载更快
+
+- 使用SSR后端渲染，数据直接输出到HTML中
+
+2）渲染优化
+
+- CSS放前面，JS放后面
+
+- 懒加载(图片懒加载、下拉加载更多)
+
+- 减少DOM查询，对DOM查询做缓存
+
+- 减少DOM操作，多个操作尽量合并在一起执行
+
+- 事件节流
+
+- 尽早进行操作(如DOMContentLoaded)
+
+示例：
+
+资源合并，a、b、c(.js) => abc (.js)
+
+缓存，通过连接名称控制缓存
+
+CDN--cdn.bootcss.com
+
+使用ssr后端渲染--vue、react
+
+懒加载：
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/%E6%87%92%E5%8A%A0%E8%BD%BD.png)
+
+缓存DOM查询
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/DOM%E7%BC%93%E5%AD%98.png)
+
+合并DOM插入
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/DOM%E6%8F%92%E5%85%A5%E7%BC%93%E5%AD%98.png)
+
+事件节流
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/%E4%BA%8B%E4%BB%B6%E8%8A%82%E6%B5%81.png)
+
+尽早操作
+
+![](https://github.com/dongrui23/attention/blob/master/picture/web/window.onload%E5%92%8CDOMContentLoaded%E7%9A%84%E5%8C%BA%E5%88%AB.png)
+
+
+**安全性 - XSS**
+
+- XSS跨站请求攻击
+
+脚本攻击代码
+
+解决：前端替换关键字，如<替换为&lt；（配合后端），后端替换
+
+**安全性 - XSRF**
+
+- XSRF跨站请求伪造
+
+钓鱼网站，伪造
+
+解决：输入指纹、密码、短信验证码
+
+**技巧**
+
+简历，项目经历--解决方案，博客，定期维护更新博客，维护开源项目，能力经历的真实性，建议不要太多加班，不要挑战面试官--给面试官惊喜-说出你知道的--缺点：你最近学什么？
