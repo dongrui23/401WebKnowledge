@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>流程控制语句：循环结构（for和while）</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      for循环：<br>
+      for(①初始化表达式; ②条件表达式; ④更新表达式){ ③语句... };<br>
+      流程：<br>
+      ①执行初始化表达式，初始化变量（初始化表达式只会执行一次）<br>
+      ②执行条件表达式，判断是否执行循环：<br>
+      &nbsp;&nbsp;如果为true，则执行循环③<br>
+      &nbsp;&nbsp;如果为false，终止循环<br>
+      ④执行更新表达式，更新表达式执行完毕继续重复②
+      <hr>
+      while循环语句：<br>
+      while(条件表达式){语句...}<br>
+      流程：<br>
+      while语句在执行时，先对条件表达式进行求值判断：<br>
+    	如果值为true，则执行循环体：<br>
+      &nbsp;&nbsp;循环体执行完毕以后，继续对表达式进行判断<br>
+      &nbsp;&nbsp;如果为true，则继续执行循环体，以此类推<br>
+      如果值为false，则终止循环<br>
+      <hr>
+      do...while循环：<br>
+      do{<br>
+      &nbsp;&nbsp;语句...<br>
+      }while(条件表达式)<br>
+      <hr>
+      break 和 continue：(区别)<br>
+      a、break<br>
+break可以用来退出switch语句或整个循环语句（循环语句包括for、while。不包括if。if里不能用 break 和 continue，否则会报错）。<br>
+break会立即终止离它最近的那个循环语句。)<br>
+可以为循环语句创建一个label，来标识当前的循环（格式：label:循环语句）。使用break语句时，可以在break后跟着一个label，这样break将会结束指定的循环，而不是最近的。)<br>
+      b、continue<br>
+continue可以用来跳过当次循环。<br>
+同样，continue默认只会离他最近的循环起作用。
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-6'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
