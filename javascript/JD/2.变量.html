@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>变量</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      字面量：数字和字符串<br>
+      在js中使用var关键字声明一个变量(ES6新增let、const声明变量)<br>
+      变量的命名、标识符、数据类型<br>
+      js中有六种数据类型：<br>
+      &nbsp;&nbsp;基本数据类型：String、Number、Boolean、Null、Undefined<br>
+      &nbsp;&nbsp;引用数据类型：Object<br>
+      <hr>
+      数据类型之间最大的区别：<br>
+      <li>基本数据类型：参数赋值的时候，传数值</li>
+      <li>引用数据类型：参数赋值的时候，传地址(修改的是同一片内存空间)</li>
+      <hr>
+      字符串：转义字符\、typeof运算符<br>
+      数值Number：数值的范围、isNaN和isNaN函数、隐式转换<br>
+      布尔值：true和false（逻辑判断）<br>
+      Null和Undefined：{typeof null = Object}、{null==undefined为true}<br>
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-6'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>

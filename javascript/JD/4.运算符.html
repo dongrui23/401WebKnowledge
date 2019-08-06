@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>运算符</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      +、-、*、/，typeof也是运算符<br>
+      分类：
+      <li>算数运算符</li>
+      <li>自增运算符</li>
+      <li>逻辑运算符</li>
+      <li>赋值运算符</li>
+      <li>关系运算符</li>
+      <li>三元运算符(条件运算符)</li>
+      <hr>
+      任何值和NaN做运算的结果都是NaN<br>
+       乘方：Math.pow(a,b);<br>
+       开方：Math.sqrt(a);<br>
+       正号+：对一个数据类型使用+，转化为Number;<br>
+       自增自减
+       <hr>
+      逻辑运算符：<br>
+      <li>&& 与（且）：两个都为真，结果才为真</li>
+      <li>||	或：只要有一个是真，结果就是真</li>
+      <li>!	非：对一个布尔值进行取反</li>
+      非布尔值的逻辑运算
+      <hr>
+      赋值运算符：a*=2;<br>
+      关系运算符：>、<、==、===;<br>
+      非数值比较
+      <hr>
+      三元运算符：条件表达式?语句1:语句2;
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-6'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>

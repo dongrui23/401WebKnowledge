@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>javascript简介</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      WEB前端：<br>
+      &nbsp;&nbsp;HTML:页面结构<br>
+      &nbsp;&nbsp;CSS:表现样式<br>
+      &nbsp;&nbsp;Javascript：行为
+    </div>
+    <hr>
+    <div>
+      Javascript分为三个部分：ECMAScript(js的语法标准)、DOM(操作网页上的元素的API)、BOM(操作浏览器部分功能的API)<br>
+      js的引用、注释<br>
+      弹出警告alert、控制台输出console.log()、用户输入prompt()(需要一个变量，输出是字符串)
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+    var vm = new Vue({
+      el:'#hrzgj',
+      data:{
+        count:[
+          {hrcount:1,times:'2019-8-6'}
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
