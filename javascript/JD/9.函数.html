@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      函数：就是将一些功能或语句进行封装，在需要的时候，通过调用的形式，执行这些语句<br>
+      函数是一个对象，函数的作用是简化编程，让编程模块化
+      <hr>
+      函数的定义：function 函数名([形参1,形参2...形参N]){  // 备注：语法中的中括号，表示“可选”语句...}<br>
+      函数表达式定义：var 函数名  = function([形参1,形参2...形参N]){语句....}<br>
+      函数的调用：函数名字();
+      <hr>
+      函数的参数：形参、实参<br>
+      函数的返回值：return的作用是结束方法<br>
+      注意：<br>
+      <li>return后的值将会作为函数的执行结果返回，可以定义一个变量，来接收该结果。</li>
+      <li>在函数中return后的语句都不会执行（函数在执行完 return 语句之后停止并立即退出）</li>
+      <li>如果return语句后不跟任何值，就相当于返回一个undefined</li>
+      <li>如果函数中不写return，则也会返回undefined</li>
+      <li>返回值可以是任意的数据类型，可以是对象，也可以是函数。</li>
+      <hr>
+      函数名、函数体和函数加载问题<br>
+      函数名 == 整个函数<br>
+      函数的加载问题：JS加载的时候，只加载函数名，不加载函数体。所以如果想使用内部的成员变量，需要调用函数。<br>
+      <hr>
+      fn() 和 fn 的区别：<br>
+      fn()：调用函数。相当于获取了函数的返回值。<br>
+      fn：函数对象。相当于直接获取了函数对象。<br>
+      立即执行函数：只执行一次
+      <hr>
+      方法：函数也可以称为对象的属性。如果一个函数作为一个对象的属性保存，那么我们称这个函数是这个对象的方法。<br>
+      obj.fn()
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-7'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
