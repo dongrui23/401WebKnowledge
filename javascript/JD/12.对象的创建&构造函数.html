@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象的创建&构造函数</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      创建自定义对象的几种方法<br>
+      1、对象字面量:对象的字面量就是一个{}。里面的属性和方法均是键值对。<br>
+      2、工厂模式:(弊端)使用工厂方法创建的对象，使用的构造函数都是Object。所以创建的对象都是Object这个类型，就导致我们无法区分出多种不同类型的对象。<br>
+      3、利用构造函数
+      <hr>
+      构造函数<br>
+      // 创建一个函数<br>
+      function createStudent(name) {<br>
+          var student = new Object();<br>
+          student.name = name;      //第一个name指的是student对象定义的变量。第二个name指的是createStudent函数的参数。二者不一样<br>
+      }
+      <hr>
+      类、实例<br>
+      使用同一个构造函数创建的对象，我们称为一类对象，也将一个构造函数称为一个类。<br>
+      通过一个构造函数创建的对象，称为该类的实例。<br>
+      对象 instanceof 构造函数<br>
+      所有的对象都是Object的后代，因此 任何对象 instanceof Object 的返回结果都是true。
+      <hr>
+      json的介绍<br>
+      JSON和对象字面量的区别：JSON的属性必须用双引号引号引起来，对象字面量可以省略。<br>
+      json里一般放常量、数组、对象等，但很少放function。<br>
+      json 采用 for...in...进行遍历，和数组的遍历方式不同。
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-11'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
