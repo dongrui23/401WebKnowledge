@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的四个基本方法&数组的遍历</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      数组的四个基本方法:<br>
+      push()	向数组的最后面插入一个或多个元素，返回结果为该数组新的长度-会改变原数组、数组的新长度 = 数组.push(元素);<br>
+      pop()	删除数组中的最后一个元素，返回结果为被删除的元素-会改变原数组、被删除的元素 = 数组.pop();<br>
+      unshift()	在数组最前面插入一个或多个元素，返回结果为该数组新的长度-会改变原数组、数组的新长度 = 数组.unshift(元素);<br>
+      shift()	删除数组中的第一个元素，返回结果为被删除的元素-会改变原数组、被删除的元素 = 数组.shift();<br>
+      <hr>
+      遍历数组的方法:<br>
+      数组/boolean/无 = 数组.every/filter/forEach/map/some(<br>
+        function(element,index,arr){<br>
+          &nbsp;&nbsp; &nbsp;&nbsp;程序和返回值；}<br>
+      for循环<br>
+      forEach()	和 for循环类似，但需要兼容IE8以上	forEach() 没有返回值。也就是说，它的返回值是 undefined
+      filter()	返回结果是true的项，将组成新的数组。可以起到过滤的作用	不会改变原数组
+      map()	对原数组中的每一项进行加工	
+      every()	如果有一项返回false，则停止遍历	意思是，要求每一项都返回true，最终的结果才返回true
+      some()	只要有一项返回true，则停止遍历
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-12'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
