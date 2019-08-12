@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>原型对象</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      原型prototype的概念<br>
+      我们所创建的每一个函数，解析器都会向函数中添加一个属性 prototype。这个属性对应着一个对象，这个对象就是我们所谓的原型对象。<br>
+      // 定义构造函数<br>
+	function Person() {}<br>
+	var per1 = new Person();<br>
+	var per2 = new Person();<br>
+	console.log(Person.prototype); // 打印结果：[object object]<br>
+  console.log(per1.__proto__ == Person.prototype); // 打印结果：true<br>
+      使用：以后我们创建构造函数时，可以将这些对象共有的属性和方法，统一添加到构造函数的原型对象中，<br>这样就不用分别为每一个对象添加，也不会影响到全局作用域，就可以使每个对象都具有这些属性和方法了。<br>
+      可以使用对象的hasOwnProperty()来检查对象自身中是否含有该属性。
+      <hr>
+      原型链
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-12'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
