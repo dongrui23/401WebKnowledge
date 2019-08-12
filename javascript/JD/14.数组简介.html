@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组简介</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      数组（Array）是属于内置对象<br>
+      创建数组对象<br>
+      1、字面量定义var arr = [1,2,3];<br>
+      2、对象定义（数组的构造函数）var arr = new Array(参数);
+      <hr>
+      向数组中添加元素、获取数组中的元素、获取数组的长度(数组的长度 = 数组名.length；)
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-8-12'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
