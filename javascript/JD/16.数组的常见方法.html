@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的常见方法</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      数组的常见方法：<br>
+      slice():从数组中提取指定的一个或多个元素，返回结果为新的数组--不会改变原数组<br>
+      &nbsp; &nbsp; &nbsp; &nbsp;新数组 = 原数组.slice(开始位置的索引, 结束位置的索引);//注意：包含开始索引，不包含结束索引<br>
+      &nbsp; &nbsp; &nbsp; &nbsp;专门用来将伪数组转化成真数组:array = Array.from(arrayLike)<br>
+      splice():从数组中删除指定的一个或多个元素，返回结果为新的数组--会改变原数组<br>
+      &nbsp; &nbsp; &nbsp; &nbsp;新数组 = 原数组.splice(起始索引index, 需要删除的个数, add第三个参数, add第四个参数...);<br>
+      concat():连接两个或多个数组，返回结果为新的数组--不会改变原数组<br>
+      &nbsp; &nbsp; &nbsp; &nbsp;新数组 = 数组1.concat(数组2, 数组3 ...);<br>
+      join():将数组转换为字符串，返回结果为转换后的字符串--不会改变原数组<br>
+      &nbsp; &nbsp; &nbsp; &nbsp;新的字符串 = 原数组.join(参数); // 参数选填<br>
+      reverse():反转数组，返回结果为反转后的数组--会改变原数组<br>
+      &nbsp; &nbsp; &nbsp; &nbsp;反转后的数组  =  数组.reverse();<br>
+      sort():对数组的元素,默认按照Unicode编码，从小到大进行排序--会改变原数组<br>
+      &nbsp; &nbsp; &nbsp; &nbsp;1、带参数（冒泡排序）；2、不带参数（按照Unicode编码排序）<br>
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-9-10'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>

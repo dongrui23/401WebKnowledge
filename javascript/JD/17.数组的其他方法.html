@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的其他方法</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      数组的其他方法:<br>
+      indexOf(value):从前往后索引，获取 value 在数组中的第一个下标<br>
+      lastIndexOf(value):从后往前索引，获取 value 在数组中的最后一个下标<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;索引值 = 数组.indexOf(value);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;索引值 = 数组.lastIndexOf(value);(如果没找到则返回-1)<br>
+      find(function()):找出第一个满足「指定条件返回true」的元素。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;let arr = [2, 3, 2, 5, 7, 6];<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;let result = arr.find(function (item, index) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return item > 4; //遍历数组arr，一旦发现有第一个元素大于4，就把这个元素返回<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(result);  //打印结果：5<br>
+      findIndex(function()):找出第一个满足「指定条件返回true」的元素的index<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;let arr = [2, 3, 2, 5, 7, 6];<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;let result = arr.find(function (item, index) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return item > 4; //遍历数组arr，一旦发现有第一个元素大于4，就把这个元素的index返回<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(result);  //打印结果：3<br>
+      Array.from(arrayLike):将伪数组转化为真数组<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;array = Array.from(arrayLike)<br>
+      Array.of(value1, value2, value3):将一系列值转换成数组。<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;//Array.of(value1, value2, value3) : 将一系列值转换成数组<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;let arr = Array.of(1, 'abc', true);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;console.log(arr);<br>
+      <hr>
+      isArray()：判断是否为数组<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;布尔值 = Array.isArray(被检测的值) ;<br>
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-9-10'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
