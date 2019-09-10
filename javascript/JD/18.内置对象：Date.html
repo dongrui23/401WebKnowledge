@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>内置对象：Date</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      内置对象：Date<br>
+      Date对象的创建<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;var date1 = new Date();<br>
+      获取日期和时间<br>
+      getDate()：获取日(1-31)<br>
+      getDay()：获取星期(0-6)（0代表星期天）<br>
+      getMonth()：获取月(0-11)（0代表一月）<br>
+      getFullYear()：获取年份<br>
+      getHours()：获取小时(0-23)<br>
+      getMinutes()：获取分钟(0-59)<br>
+      getSeconds():获取秒(0-59)<br>
+      getMilliseconds()：获取毫秒(1s=1000ms)<br>
+      getTime()：获取时间戳<br>
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-9-11'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>

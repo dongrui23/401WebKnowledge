@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>包装类</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+  <div id='hrzgj'>
+    <div>
+      js中的数据类型包括以下几种。<br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;基本数据类型：String、Number、Boolean、Null、Undefined<br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;引用数据类型：Object<br>
+
+      JS为我们提供了三个包装类：<br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;String()：将基本数据类型字符串，转换为String对象。<br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;Number()：将基本数据类型的数字，转换为Number对象。<br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;Boolean()：将基本数据类型的布尔值，转换为Boolean对象。<br>
+      基本数据类型的数据转换为对象<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;var num = new Number(3);<br>
+
+	    &nbsp;&nbsp;&nbsp;&nbsp;var str = new String("hello");<br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;var bool = new Boolean(true);<br>
+
+	    &nbsp;&nbsp;&nbsp;&nbsp;console.log(typeof num); // 打印结果：object<br>
+    </div>
+    <hr>
+    <div>
+      复习次数：<li v-for='item in count'>{{item.hrcount}}&nbsp;&nbsp;{{item.times}}</li>
+    </div>
+    <hr>
+  </div>
+  <script>
+      var vm = new Vue({
+        el:'#hrzgj',
+        data:{
+          count:[
+            {hrcount:1,times:'2019-9-11'}
+          ]
+        }
+      })
+    </script>
+</body>
+</html>
